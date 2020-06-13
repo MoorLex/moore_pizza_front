@@ -1,0 +1,54 @@
+.navbar {
+  z-index: 100;
+}
+
+.navbar-search{
+  right: 0;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+
+  .form-control{
+    top: 0;
+    right: 0;
+    border: 0;
+    width: 40px;
+    transition: .3s;
+    background: $white;
+    position: absolute;
+    color: transparent;
+    box-shadow: none !important;
+
+    &:focus, &.active{
+      width: 100%;
+      color: $dark;
+      background: $light;
+
+      &+.btn{
+        pointer-events: all;
+      }
+    }
+
+    &::-webkit-input-placeholder {
+      color: $light;
+    }
+    &:-moz-placeholder {
+      color: $light;
+      opacity: 1;
+    }
+    &::-moz-placeholder {
+      color: $light;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder {
+      color: $light;
+    }
+  }
+
+  .btn {
+    top: 0;
+    right: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+}

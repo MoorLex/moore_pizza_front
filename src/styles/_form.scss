@@ -1,0 +1,24 @@
+.custom-radio {
+
+  .custom-control-label{
+    &::after { display: none; }
+    &::before { transition: .3s; }
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::before {
+      background: #fff;
+      border-radius: 50%;
+      border: 4px solid $danger;
+    }
+  }
+}
+
+.custom-checkbox {
+   .custom-control-input:checked ~ .custom-control-label {
+     &::before {
+       background-color: $danger;
+       border-color: $danger;
+     }
+   }
+ }

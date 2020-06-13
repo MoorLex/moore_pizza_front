@@ -1,0 +1,49 @@
+.app-menu{
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  position: fixed;
+
+  &.fade-enter-active, &.fade-leave-active {
+    transition: .3s;
+
+    .close { transition: opacity .3s, visibility .3s; }
+    .menu { transition: transform .3s; }
+  }
+
+  &.fade-enter, &.fade-leave-to {
+    .close {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .menu {
+      transform: translateX(100%);
+    }
+  }
+
+  .close{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    cursor: pointer;
+    position: absolute;
+    visibility: visible;
+    background: fade_out(#000, .5);
+  }
+
+  .menu{
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    height: 100%;
+    max-width: 500px;
+    background: #fff;
+    position: absolute;
+    box-shadow: 1px 0 0 #ddd;
+  }
+}

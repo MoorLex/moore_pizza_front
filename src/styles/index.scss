@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&family=Montserrat&family=Open+Sans:wght@400;700&display=swap');
+
+$red: #F84400;
+
+@import "bootstrap";
+@import "icons";
+@import "ratio";
+@import "buttons";
+@import "nav-bar";
+@import "form";
+@import "menu";
+
+body {
+  font-size: 16px;
+  cursor: default;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.no-select, .btn {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.fill-parent {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+.bg-image{
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  font-weight: bold;
+  font-family: 'Merienda One', sans-serif;
+}
+
+.price {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.menu-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

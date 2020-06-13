@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'icons';
+  src:  url('/static/fonts/icons.eot?m5qzi4');
+  src:  url('/static/fonts/icons.eot?m5qzi4#iefix') format('embedded-opentype'),
+  url('/static/fonts/icons.ttf?m5qzi4') format('truetype'),
+  url('/static/fonts/icons.woff?m5qzi4') format('woff'),
+  url('/static/fonts/icons.svg?m5qzi4#geo-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*="icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  speak: none;
+  line-height: 1;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-family: 'icons', sans-serif !important;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cheese:before {
+  content: "\e900";
+}
+.icon-pizza:before {
+  content: "\e901";
+}
+.icon-fire:before {
+  content: "\e902";
+}
+.icon-trash:before {
+  content: "\e90d";
+}
+.icon-chevron-up:before {
+  content: "\e903";
+}
+.icon-x:before {
+  content: "\e904";
+}
+.icon-arrow-right:before {
+  content: "\e905";
+}
+.icon-chevron-right:before {
+  content: "\e906";
+}
+.icon-plus:before {
+  content: "\e907";
+}
+.icon-heart:before {
+  content: "\e908";
+}
+.icon-shopping-bag:before {
+  content: "\e909";
+}
+.icon-search:before {
+  content: "\e90a";
+}
+.icon-arrow-left:before {
+  content: "\e90b";
+}
+.icon-chevron-left:before {
+  content: "\e90c";
+}

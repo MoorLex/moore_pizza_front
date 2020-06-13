@@ -1,0 +1,40 @@
+.btn-squire{
+  padding: 0;
+  height: 40px;
+  display: flex;
+  min-width: 40px;
+  line-height: 40px;
+  align-items: center;
+  justify-content: center;
+
+  &.btn-sm{
+    height: 20px;
+    min-width: 20px;
+    line-height: 20px;
+  }
+}
+
+.btn-white {
+  color: #212529;
+  background-color: #fff;
+  border-color: #fff;
+
+  &:hover {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+  }
+
+  &:focus, &.focus {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+    box-shadow: 0 0 0 0.2rem rgba(249, 249, 249, 0.5);
+  }
+
+  &.disabled, &:disabled {
+    color: #4f5a63;
+    background-color: #fff;
+    border-color: #fff;
+  }
+}
