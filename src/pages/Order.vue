@@ -6,12 +6,23 @@
         <h2 class="title mb-4">Billing Details</h2>
         <div class="card">
           <ul class="list-group list-group-flush">
+            <li class="list-group-item list-group-item-action">
+              <dl class="row mb-0 align-items-center">
+                <dt class="col-md-3">Status:</dt>
+                <dd class="col-md-9 mb-0">
+                  <button class="btn events-disable btn-sm"
+                          :class="'btn-' + status.color">
+                    {{ status.text }}
+                  </button>
+                </dd>
+              </dl>
+            </li>
             <li class="list-group-item list-group-item-action"
-                v-for="(item, i) in ['created_at', 'first_name', 'last_name', 'email', 'phone', 'city', 'address']"
+                v-for="(item, i) in ['created_at', 'first_name', 'last_name', 'email', 'phone', 'city', 'address', 'notes']"
                 :key="i">
               <dl class="row mb-0">
-                <dt class="col-md-3">{{constants[item]}}:</dt>
-                <dd class="col-md-9 mb-0">{{order[item]}}</dd>
+                <dt class="col-md-3">{{ constants[item] }}:</dt>
+                <dd class="col-md-9 mb-0">{{ order[item] }}</dd>
               </dl>
             </li>
           </ul>
@@ -21,31 +32,6 @@
     <section class="pb-5">
       <div class="container">
         <h2 class="title mb-4">Order Details</h2>
-<!--        <div class="card">-->
-<!--          <div class=""-->
-<!--               v-for="(product, i) in products"-->
-<!--               :key="i">-->
-<!--            <p class="mb-0 small"-->
-<!--               v-if="product.settings.dough">-->
-<!--              + {{ doughs[settings.dough].name }}-->
-<!--            </p>-->
-<!--            <p class="mb-0 small"-->
-<!--               v-for="(item, j) in product.settings.crust"-->
-<!--               :key="'crust_' + j">-->
-<!--              + {{ crusts[item].name }}-->
-<!--            </p>-->
-<!--            <p class="mb-0 small"-->
-<!--               v-for="(item, j) in product.settings.add"-->
-<!--               :key="'add_' + j">-->
-<!--              + {{ adds[item].name }}-->
-<!--            </p>-->
-<!--            <p class="mb-0 small"-->
-<!--               v-for="(item, j) in product.settings.cheese"-->
-<!--               :key="'cheese_' + j">-->
-<!--              + {{ cheeses[item].name }}-->
-<!--            </p>-->
-<!--          </div>-->
-<!--        </div>-->
         <div class="card mb-3"
              v-for="(product, i) in products"
              :key="i">
@@ -104,7 +90,7 @@
 <script>
 import setCurrency from '../mixins/setCurrency'
 import { order } from '../api'
-import { adds, cheeses, crusts, doughs } from '../constants'
+import { adds, cheeses, crusts, doughs, statuses } from '../constants'
 import NavBar from '../components/NavBar'
 import Menu from '../components/Menu'
 import Footer from '../components/Footer'
@@ -122,6 +108,7 @@ export default {
       crusts,
       adds,
       cheeses,
+      statuses,
       constants: {
         created_at: 'Order Placed At',
         first_name: 'First Name',
@@ -129,10 +116,21 @@ export default {
         email: 'Email Address',
         phone: 'Phone Number',
         city: 'City',
-        address: 'Address'
+        address: 'Address',
+        notes: 'Order Notes'
       },
       order: {},
       products: []
+    }
+  },
+  computed: {
+    status () {
+      const status = {
+        text: 'No Data',
+        color: 'muted',
+        value: 0
+      }
+      return statuses.find(({ value }) => value === this.order.status) || status
     }
   },
   beforeRouteEnter (to, from, next) {

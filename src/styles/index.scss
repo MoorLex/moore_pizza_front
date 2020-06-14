@@ -38,6 +38,10 @@ body {
   background-position: center;
 }
 
+.events-disable {
+  pointer-events: none;
+}
+
 .title {
   font-weight: bold;
   font-family: 'Merienda One', sans-serif;

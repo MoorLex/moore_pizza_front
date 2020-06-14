@@ -1,3 +1,21 @@
+export const statuses = [
+  {
+    text: 'Order Received',
+    color: 'primary',
+    value: 1
+  },
+  {
+    text: 'Cooking Order',
+    color: 'warning',
+    value: 2
+  },
+  {
+    text: 'Delivery Order',
+    color: 'danger',
+    value: 3
+  }
+]
+
 export const doughs = [
   {
     name: 'Regular',
