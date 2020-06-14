@@ -41,9 +41,9 @@ const routes = [
     component: Pizza
   },
   {
-    path: '/order/:id',
+    path: '/order/:token',
     props: route => ({
-      id: parseInt(route.params.id)
+      token: route.params.token
     }),
     name: 'Order',
     component: Order

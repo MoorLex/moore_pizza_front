@@ -100,7 +100,7 @@ export default {
     setCurrency()
   ],
   props: {
-    id: Number
+    token: Number
   },
   data () {
     return {
@@ -134,7 +134,7 @@ export default {
     }
   },
   beforeRouteEnter (to, from, next) {
-    order.load(parseInt(to.params.id))
+    order.load(to.params.token)
       .then((data) => {
         next((vm) => vm.setData(data))
       })

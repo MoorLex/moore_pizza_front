@@ -172,13 +172,13 @@ export default {
       ], [])
       try {
         await Validation(this.form, this.validation)
-        const { id } = await order.create({
+        const { token } = await order.create({
           products,
           price: this.cartPrice,
           ...this.form
         })
         this.$store.commit('cart/flush')
-        await this.$router.replace({ name: 'Order', params: { id } })
+        await this.$router.replace({ name: 'Order', params: { token } })
       } catch (errors) {
         this.errors = errors
       }
