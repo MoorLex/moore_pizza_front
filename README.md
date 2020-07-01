@@ -1,5 +1,5 @@
 # moore_pizza_front
-To view the demo check: [moore-pizza.tk](moore-pizza.tk)
+To view the demo check: [moore-pizza.tk](http://moore-pizza.tk)
 
 ## Build Setup
 
