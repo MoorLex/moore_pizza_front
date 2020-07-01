@@ -1,5 +1,5 @@
-# vue-webpack4-template
-VueJs template using Webpack 4
+# moore_pizza_front
+To view the demo check: [moore-pizza.tk](moore-pizza.tk)
 
 ## Build Setup
 
